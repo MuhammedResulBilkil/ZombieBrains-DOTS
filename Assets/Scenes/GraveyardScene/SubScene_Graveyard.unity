@@ -255,3 +255,4 @@ MonoBehaviour:
     x: 40
     y: 40
   numberTombstonesToSpawn: 250
+  randomSeed: 100
