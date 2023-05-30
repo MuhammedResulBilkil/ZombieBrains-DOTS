@@ -6,8 +6,10 @@ using Random = Unity.Mathematics.Random;
 public class GraveyardAuthoring : MonoBehaviour
 {
     public GameObject tombstonePrefab;
+    public GameObject zombiePrefab;
     public float2 fieldDimensions;
     
+    public float zombieSpawnRate;
     public int numberTombstonesToSpawn;
     public uint randomSeed;
 }
@@ -18,10 +20,13 @@ public class GraveyardBaker : Baker<GraveyardAuthoring>
     {
         Entity graveyardEntity = GetEntity(authoring, TransformUsageFlags.Dynamic);
         Entity tombstonePrefab = GetEntity(authoring.tombstonePrefab, TransformUsageFlags.Dynamic);
+        Entity zombiePrefab = GetEntity(authoring.zombiePrefab, TransformUsageFlags.Dynamic);
         
         AddComponent(graveyardEntity, new GraveyardComponent
         {
             tombstonePrefab = tombstonePrefab,
+            zombiePrefab = zombiePrefab,
+            zombieSpawnRate = authoring.zombieSpawnRate,
             fieldDimensions = authoring.fieldDimensions,
             numberTombstonesToSpawn = authoring.numberTombstonesToSpawn
         });
@@ -30,5 +35,8 @@ public class GraveyardBaker : Baker<GraveyardAuthoring>
         {
             value = Random.CreateFromIndex(authoring.randomSeed)
         });
+        
+        AddComponent<ZombieSpawnPointsComponent>(graveyardEntity);
+        AddComponent<ZombieSpawnTimerComponent>(graveyardEntity);
     }
 }

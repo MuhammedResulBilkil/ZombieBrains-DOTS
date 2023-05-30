@@ -251,8 +251,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tombstonePrefab: {fileID: 14975308294066400, guid: 40686a6c484c6574386f4e9f32d9d9d9, type: 3}
+  zombiePrefab: {fileID: 9044115827107593775, guid: c0ccb488695fc274198cb7fcf7ed14df, type: 3}
   fieldDimensions:
     x: 40
     y: 40
+  zombieSpawnRate: 1
   numberTombstonesToSpawn: 250
   randomSeed: 100
