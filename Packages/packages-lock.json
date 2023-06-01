@@ -50,7 +50,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.entities": {
-      "version": "1.0.8",
+      "version": "1.0.10",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -68,11 +68,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.entities.graphics": {
-      "version": "1.0.8",
+      "version": "1.0.10",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.entities": "1.0.8",
+        "com.unity.entities": "1.0.10",
         "com.unity.modules.particlesystem": "1.0.0",
         "com.unity.render-pipelines.core": "14.0.6"
       },
